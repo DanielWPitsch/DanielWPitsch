@@ -1,5 +1,5 @@
 
-## Oi eu sou a Daniel Warella Pitsch
+## Oi eu sou Daniel Warella Pitsch
 <div align="left">
   <a href="https://github.com/DanielWPitsch">
   <img height="180em" src="https://github-readme-stats.vercel.app/api?username=DanielWPitsch&show_icons=true&theme=highcontrast&include_all_commits=false&count_private=false"/>
