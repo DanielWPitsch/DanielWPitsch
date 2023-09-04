@@ -1,0 +1,97 @@
+https://www.youtube.com/watch?v=UBAX-13g8OM
+
+criando txt pelo terminal:
+echo "hello" > rascunho.txt
+
+Criando um repositorio
+cd C:\Users\Pasta\arquivo.extensão
+git init
+git add contributors.txt ou git add .
+git commit -m "Primeiro commit!"
+git remote add origin https://github.com/NikolaiCinotti/exercicios-c.git
+git push -u origin master
+
+Push
+ir na pasta que fica seu repositorios no computador
+clica com botao direito e abre o git bash ou abre o cmd na mesma pasta
+git add .
+git commit -m "descrição da alteração"
+git push
+
+merge
+git checkout main
+git merge nome-da-outra-branch
+git add .
+git commit -m "merge"
+git push origin main
+
+deletar arquivo
+ir no repositorio e deletar o arquivo
+no gitbash
+git pull
+
+git reset
+https://www.youtube.com/watch?v=7V2fQBLLVts&ab_channel=B%C3%B3sonTreinamentos
+git reset --mixed HEAD~1
+git stash -m "revertendo o push"
+$ git revert HEAD~0
+git push origin main -f
+
+Nova branch
+git branch daniel
+git branch
+git checkout daniel
+git add .
+git commit -m "igual"
+git push origin daniel
+
+Fechar arquivo
+Esc + :wq
+
+logar usuario
+git config --global user.name "Daniel"
+git config --global user.email "danielwarellapitsch@gmail.com"
+git config --list
+
+deslogar
+git config --global unset user.name
+git config --global unset user.email
+
+
+The second command that git pull runs is usually git merge (you can set it up to run a different second command, 
+but obviously you have not done that). When git pull runs git merge, it supplies, as the merge commit's log message:
+
+Merge branch '<name>' of <url>
+The <name> part is the name of the branch that git pull told git fetch to get from the other Git. The <url> 
+part is the URL that git pull told git fetch to contact, to get commits found via the name <name>. So if your 
+branch has origin/master set as its upstream, your git pull has your Git call up the Git at origin and get any 
+new commits from that Git's master. Then your git pull has your Git merge those commits, with the message Merge 
+branch 'master' of ....
+
+At this point, you have their (the other Git's) commits and your own commits, plus a merge commit tying your two 
+sets of commits together. Assuming you are using your own master, this looks something like this:
+
+          ●--●--●
+         /       \
+...--o--o         ●   <-- master (HEAD)
+         \       /
+          o-----o   <-- origin/master
+Your commits—the ones you made yourself—are along the top row; the shared commits are at the left middle row; and their commits—the ones they made after you cloned—are along the bottom row. The right-most commit is the new merge commit you just made. I have marked the commits that you have, that they don't, as solid black circles ●.
+
+You now run git push origin master to send your new commits to the Git at origin, on GitHub. This sends the commits that yo have that they don't, and then asks GitHub's Git to set its master to point to the merge commit. If it does so, your Git remembers this, so that your own diagram now looks like this:
+
+          ●--●--●
+         /       \
+...--o--o         ●   <-- master (HEAD), origin/master
+         \       /
+          o-----o
+When someone else runs git fetch to the Git on GitHub that holds the other copy, GitHub's Git's master 
+will now point to this same final commit, so you'll see Merge branch 'master' of <url> as the log message 
+of the tip-most commit of this master.
+
+When thinking about all this, remember that there are three Git repositories involved here now. There's 
+GitHub's Git, holding a copy of the repository that you update by using git push. There's your co-worker's 
+Git, holding a copy of the repository that your co-worker updates from GitHub, and that your co-worker uses 
+git push to send updates to GitHub. And there's your own Git, holding a copy of the repository you got from 
+GitHub, where you use git push to send your updates to GitHub. GitHub's third repository simply acts as the 
+sharing point.
