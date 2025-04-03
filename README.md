@@ -4,7 +4,6 @@
   <a href="https://github.com/DanielWPitsch">
   <img height="180em" src="https://github-readme-stats.vercel.app/api?username=DanielWPitsch&show_icons=true&theme=highcontrast&include_all_commits=false&count_private=false"/>
   <img height="180em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=DanielWPitsch&layout=compact&langs_count=8&hide=jupyter%20notebook,html&theme=highcontrast"/>
-    ![PRs Count](https://img.shields.io/badge/Pull_Requests-XX-blue?style=flat-square)
 </div>
 
 <div style="display: inline_block"><br>
